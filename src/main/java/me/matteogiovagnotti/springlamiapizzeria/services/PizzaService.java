@@ -4,8 +4,10 @@ import me.matteogiovagnotti.springlamiapizzeria.exceptions.PizzaNotFoundExceptio
 import me.matteogiovagnotti.springlamiapizzeria.models.Pizza;
 import me.matteogiovagnotti.springlamiapizzeria.repositories.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -57,6 +59,16 @@ public class PizzaService {
             return false;
 
         }
+    }
+
+    public List<Pizza> getAllPizzas() {
+
+        return pizzaRepository.findAll(Sort.by("name"));
+
+    }
+
+    public List<Pizza> getFilteredPizzas(String keyword) {
+        return pizzaRepository.findByNameContainingIgnoreCase(keyword);
     }
 
 }

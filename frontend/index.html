@@ -18,9 +18,22 @@
             
           
         </div>
-    
-      
-
+        <h2> Create New Pizza</h2>
+        <form id="form">
+            <div class="mb-3">
+                <label for="pizzaName" class="form">Name</label>
+                <input type="text" class="form-control" id="pizzaName" placeholder="Pizza Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="pizzaDesc" class="form-label">Description</label>
+                <textarea class="form-control" id="pizzaDesc" placeholder="Pizza Description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="pizzaPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="pizzaPrice" placeholder="Pizza Price" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" 
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" 
